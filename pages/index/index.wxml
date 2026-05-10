@@ -1,0 +1,31 @@
+<!--index.wxml-->
+<view class="container">
+  <!-- 轮播图区域 -->
+  <swiper 
+    class="swiper" 
+    indicator-dots="{{true}}" 
+    autoplay="{{true}}" 
+    interval="{{3000}}" 
+    duration="{{500}}" 
+    circular="{{true}}"
+    indicator-color="rgba(255,255,255,0.5)"
+    indicator-active-color="#ffffff"
+  >
+    <swiper-item wx:for="{{swiperList}}" wx:key="index">
+      <image class="swiper-image" src="{{item}}" mode="aspectFill" />
+    </swiper-item>
+  </swiper>
+
+  <!-- 三个功能卡片 -->
+  <view class="card-container">
+    <view class="card" bindtap="goToBook" hover-class="card-hover">
+      <text class="card-text">  图书 共492本</text>
+    </view>
+    <view class="card" bindtap="goToJournal" hover-class="card-hover">
+      <text class="card-text">  期刊论文 共73篇</text>
+    </view>
+    <view class="card" bindtap="goToMyth" hover-class="card-hover">
+      <text class="card-text">  神话史诗 共50篇</text>
+    </view>
+  </view>
+</view>

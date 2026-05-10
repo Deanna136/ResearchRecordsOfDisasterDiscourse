@@ -1,0 +1,30 @@
+<view class="search-box">
+  <input 
+    class="search-input" 
+    placeholder="按图书名/作者名搜索" 
+    value="{{searchKey}}"
+    bindinput="onSearchInput"
+    confirm-type="search"
+  />
+  <icon wx:if="{{searchKey}}" class="clear-icon" type="clear" bindtap="onClearSearch" />
+</view>
+
+<view wx:if="{{filteredList.length === 0 && searchKey}}" class="empty-tip">暂无匹配数据</view>
+
+<van-card 
+  wx:for="{{filteredList}}" 
+  wx:key="{{item.id}}"
+  thumb="{{imageURL}}"
+  title="{{item.title}}"
+  bind:tap="toDetails" data-id="{{item.id}}"
+>
+  <view slot="desc">
+    <text wx:if="{{item.contributor}}">作者/责任者：{{item.contributor}}</text>
+    <text wx:if="{{item.placeOfPublication}}">出版地：{{item.placeOfPublication}}</text>
+    <text wx:if="{{item.publisher}}">出版者：{{item.publisher}}</text>
+    <text wx:if="{{item.yearOfPublication}}">出版年：{{item.yearOfPublication}}</text>
+  </view>
+  <van-divider />
+</van-card>
+
+

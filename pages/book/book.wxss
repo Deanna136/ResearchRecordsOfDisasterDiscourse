@@ -1,0 +1,36 @@
+/* 搜索框外层容器 */
+.search-box {
+  display: flex;
+  align-items: center;
+  background-color: #f5f7fa;
+  border-radius: 60rpx;
+  padding: 12rpx 24rpx;
+  margin: 20rpx 32rpx;
+  transition: all 0.2s ease;
+  border: 1rpx solid transparent;
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.02);
+}
+
+/* 输入框获得焦点时改变样式 */
+.search-box:focus-within {
+  background-color: #ffffff;
+  border-color: #2e7d32;
+  box-shadow: 0 4rpx 16rpx rgba(46, 125, 50, 0.12);
+}
+
+/* 输入框本身 */
+.search-input {
+  flex: 1;
+  height: 72rpx;
+  font-size: 28rpx;
+  color: #1f2d3d;
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+/* 占位符样式 */
+.search-input::placeholder {
+  color: #9aa9b9;
+  font-size: 28rpx;
+}

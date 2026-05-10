@@ -1,0 +1,77 @@
+/* pages/index/index.wxss */
+page {
+  background-color: #f8f8f8;
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f8f8f8;
+}
+
+/* 轮播图样式 */
+.swiper {
+  width: 100%;
+  height: 400rpx; /* 固定高度，可根据需要调整 */
+  background-color: #e0e0e0;
+}
+
+.swiper-image {
+  width: 100%;
+  height: 100%;
+}
+
+/* 卡片容器 */
+.card-container {
+  display : flex;
+  width : 100% ;
+  margin: 0;
+}
+
+/* 单个卡片 */
+.card {
+  flex: 1;
+  height: 400rpx;
+  background: linear-gradient(135deg, rgba(51, 54, 52, 0.281), #2525250a);
+  border-radius: 24rpx;
+  box-shadow: 0 8rpx 24rpx rgba(17, 17, 17, 0.514);
+  padding: 0 20rpx;
+  /* 核心：让内部文字垂直 + 水平居中 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease-in-out;
+  border: 1rpx solid rgba(0, 0, 0, 0.02);
+  box-sizing: border-box;
+}
+
+/* 卡片文字 → 已完美居中 */
+.card-text {
+  font-size: 34rpx;
+  font-weight: 600;
+  color: #2c3e4e;
+  letter-spacing: 2rpx;
+  text-align: center;
+}
+
+/* 卡片点击效果 */
+.card-hover {
+  transform: scale(0.96);
+  background:  rgba(51, 54, 52, 0.281);
+  box-shadow: 0 8rpx 24rpx rgba(17, 17, 17, 0.514);
+  opacity: 0.9;
+}
+
+/* 响应式适配：小屏幕适当缩小内边距 */
+@media (max-width: 480px) {
+  .card-container {
+    padding: 32rpx 24rpx;
+    gap: 16rpx;
+  }
+  .card {
+    padding: 36rpx 0;
+  }
+  .card-text {
+    font-size: 30rpx;
+  }
+}

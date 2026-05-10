@@ -1,0 +1,26 @@
+<!--pages/myth/myth.wxml-->
+<view class="search-box">
+  <input 
+    class="search-input" 
+    placeholder="按史诗名/民族搜索" 
+    value="{{searchKey}}"
+    bindinput="onSearchInput"
+    confirm-type="search"
+  />
+  <icon wx:if="{{searchKey}}" class="clear-icon" type="clear" bindtap="onClearSearch" />
+</view>
+
+<view wx:if="{{filteredList.length === 0 && searchKey}}" class="empty-tip">暂无匹配数据</view>
+
+<van-card 
+  wx:for="{{filteredList}}" 
+  wx:key="{{item.id}}"
+  thumb="{{imageURL}}"
+  title="{{item.epicTitle}}"
+  bind:tap="toDetails" data-id="{{item.id}}"
+>
+  <view slot="desc">
+    <text wx:if="{{item.ethnicGroup}}">民族：{{item.ethnicGroup}}</text>
+  </view>
+  <van-divider />
+</van-card>

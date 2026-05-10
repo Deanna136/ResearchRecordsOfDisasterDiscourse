@@ -1,0 +1,18 @@
+<van-card 
+  thumb="{{imageURL}}"
+  title="{{currentBook.epicTitle}}"
+>
+  <view slot="desc">
+    <text wx:if="{{currentBook.ethnicGroup}}">民族：{{currentBook.ethnicGroup}}</text>
+    <text wx:if="{{currentBook.narrator}}">讲述人：{{currentBook.narrator}}</text>
+    <text wx:if="{{currentBook.translator}}">翻译人：{{currentBook.translator}}</text>
+    <text wx:if="{{currentBook.collector}}">采录人/搜集者：{{currentBook.collector}}</text>
+    <text wx:if="{{currentBook.compiler}}">整理者：{{currentBook.compiler}}</text>
+    <text wx:if="{{currentBook.rewriter}}">改写者：{{currentBook.rewriter}}</text>
+    <text wx:if="{{currentBook.collectionArea}}">采录地区：{{currentBook.collectionArea}}</text>
+    <text wx:if="{{currentBook.recordingDate}}">记录时间：{{currentBook.recordingDate}}</text>
+    <rich-text wx:if="{{currentBook.text}}">具体内容：{{currentBook.text}}</rich-text>
+    <text wx:if="{{currentBook.otherInfo}}">其他信息：{{currentBook.otherInfo}}</text>
+  </view>
+  <van-divider />
+</van-card>

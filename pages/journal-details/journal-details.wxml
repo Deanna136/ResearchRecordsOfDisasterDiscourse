@@ -1,0 +1,17 @@
+<van-card 
+  thumb="{{imageURL}}"
+  title="{{currentBook.articleTitle}}"
+>
+  <view slot="desc">
+    <text wx:if="{{currentBook.contributor}}">作者/责任者：{{currentBook.contributor}}</text>
+    <text wx:if="{{currentBook.articleTitle}}">文献篇名：{{currentBook.articleTitle}}</text>
+    <text wx:if="{{currentBook.journalName}}">期刊名：{{currentBook.journalName}}</text>
+    <text wx:if="{{currentBook.yearOfPublication}}">发表年：{{currentBook.yearOfPublication}}</text>
+    <text wx:if="{{currentBook.issueNumber}}">期号：{{currentBook.issueNumber}}</text>
+    <rich-text wx:if="{{currentBook.abstract}}">摘要：{{currentBook.abstract}}</rich-text>
+    关键词：<van-tag type="success">{{currentBook.keywords}}</van-tag>
+    <rich-text user-select="true">链接：{{currentBook.link}}</rich-text>
+    <text wx:if="{{currentBook.otherInfo}}">其他信息：{{currentBook.otherInfo}}</text>
+  </view>
+  <van-divider />
+</van-card>

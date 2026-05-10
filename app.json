@@ -1,0 +1,49 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/book/book",
+    "pages/journal/journal",
+    "pages/myth/myth",
+    "pages/journal-details/journal-details",
+    "pages/book-details/book-details",
+    "pages/myth-details/myth-details"
+  ],
+  "entryPagePath": "pages/index/index",
+  "window": {
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "灾语研录"
+  },
+  "tabBar": {
+    "color": "#666666", 
+    "selectedColor": "#007aff",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "position": "bottom", 
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/book/book",
+        "text": "图书"
+      },
+      {
+        "pagePath": "pages/journal/journal",
+        "text": "期刊"
+      },
+      {
+        "pagePath": "pages/myth/myth",
+        "text": "神话史诗"
+      }
+    ]
+  },
+  "usingComponents": {
+    "van-card": "@vant/weapp/card/index",
+    "van-divider": "@vant/weapp/divider/index"
+  },
+  "componentFramework": "glass-easel",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

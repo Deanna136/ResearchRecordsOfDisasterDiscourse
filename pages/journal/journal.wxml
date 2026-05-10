@@ -1,0 +1,30 @@
+<!--pages/journal/journal.wxml-->
+<view class="search-box">
+  <input 
+    class="search-input" 
+    placeholder="按文献篇名/作者名搜索" 
+    value="{{searchKey}}"
+    bindinput="onSearchInput"
+    confirm-type="search"
+  />
+  <icon wx:if="{{searchKey}}" class="clear-icon" type="clear" bindtap="onClearSearch" />
+</view>
+
+<view wx:if="{{filteredList.length === 0 && searchKey}}" class="empty-tip">暂无匹配数据</view>
+
+<van-card 
+  wx:for="{{filteredList}}" 
+  wx:key="{{item.id}}"
+  thumb="{{imageURL}}"
+  title="{{item.articleTitle}}"
+  bind:tap="toDetails" data-id="{{item.id}}"
+>
+  <view slot="desc">
+    <text class="one-line-text" wx:if="{{item.contributor}}">作者/责任者：{{item.contributor}}</text>
+    <text class="one-line-text" wx:if="{{item.articleTitle}}">文献篇名：{{item.articleTitle}}</text>
+    <text class="one-line-text" wx:if="{{item.journalName}}">期刊名：{{item.journalName}}</text>
+    <text class="one-line-text" wx:if="{{item.yearOfPublication}}">发表年：{{item.yearOfPublication}}</text>
+    <text class="one-line-text" wx:if="{{item.issueNumber}}">期号：{{item.issueNumber}}</text>
+  </view>
+  <van-divider />
+</van-card>
